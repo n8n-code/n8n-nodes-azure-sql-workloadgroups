@@ -2,32 +2,32 @@ import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from '
 
 
 export class AzureSqlWorkloadgroups implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Azure SQL Workloadgroups',
-		name: 'N8nDevAzureSqlWorkloadgroups',
-		icon: { light: 'file:./azure-sql-workloadgroups.png', dark: 'file:./azure-sql-workloadgroups.dark.png' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'Azure SQL Database REST API manages database services.',
-		defaults: { name: 'Azure SQL Workloadgroups' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevAzureSqlWorkloadgroupsApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Azure SQL Workloadgroups',
+                name: 'N8nDevAzureSqlWorkloadgroups',
+                icon: { light: 'file:./azure-sql-workloadgroups.png', dark: 'file:./azure-sql-workloadgroups.dark.png' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'Azure SQL Database REST API manages database services.',
+                defaults: { name: 'Azure SQL Workloadgroups' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevAzureSqlWorkloadgroupsApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -37,6 +37,6 @@ export class AzureSqlWorkloadgroups implements INodeType {
 			"default": ""
 		},
 		
-		],
-	};
+                ],
+        };
 }
